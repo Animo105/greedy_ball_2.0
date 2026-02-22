@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://btvm14jbv5qie"]
+
+[ext_resource type="Script" uid="uid://bamgxemelvo32" path="res://Paddles/Scripts/basic_left_paddle.gd" id="1_4l7sc"]
+[ext_resource type="Texture2D" uid="uid://btov8gobjvggv" path="res://Assets/tkt_c_just_une_paddle.png" id="2_tanea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwwlx"]
+size = Vector2(112, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tanea"]
+size = Vector2(104.5, 13.5)
+
+[node name="PaddleLeft" type="Node2D" unique_id=770522853]
+script = ExtResource("1_4l7sc")
+
+[node name="Paddle" type="Node2D" parent="." unique_id=1120481235]
+rotation = 0.5235988
+
+[node name="Sprite2D" type="Sprite2D" parent="Paddle" unique_id=731684550]
+position = Vector2(46, 0)
+scale = Vector2(0.37499997, 0.20000002)
+texture = ExtResource("2_tanea")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Paddle" unique_id=977498320]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle/StaticBody2D" unique_id=562479303]
+position = Vector2(46, 0)
+shape = SubResource("RectangleShape2D_nwwlx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1960678925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1987738265]
+position = Vector2(48.999992, 14)
+rotation = 0.5235988
+shape = SubResource("RectangleShape2D_tanea")
