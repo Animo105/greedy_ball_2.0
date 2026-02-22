@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dh4xu35dfbrpg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uuc6c"]
+load_path = "res://.godot/imported/tkt_c_just_un_cercle.png-db36d5ac7029dfc481c2255383362301.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gp36c"]
+radius = 66.007576
+
+[node name="BaseModule" type="Node2D" unique_id=24662692]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039433539]
+modulate = Color(0, 0.71831214, 0.8202066, 1)
+texture = SubResource("CompressedTexture2D_uuc6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1140759092]
+shape = SubResource("CircleShape2D_gp36c")
