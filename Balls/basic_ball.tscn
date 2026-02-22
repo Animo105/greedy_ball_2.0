@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://erm0ja3ak2xb"]
+
+[ext_resource type="Script" uid="uid://v2rxamub0vrt" path="res://Balls/Scripts/basic_ball.gd" id="1_qedeb"]
+
+[node name="BasicBall" type="Node2D" unique_id=2026379919]
+script = ExtResource("1_qedeb")
+value = 1
