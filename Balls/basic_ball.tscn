@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://erm0ja3ak2xb"]
 
 [ext_resource type="Script" uid="uid://v2rxamub0vrt" path="res://Balls/Scripts/basic_ball.gd" id="1_qedeb"]
+[ext_resource type="Texture2D" uid="uid://dd5xskmt7488e" path="res://Assets/tkt_c_just_un_cercle.png" id="2_aipxk"]
 
-[node name="BasicBall" type="Node2D" unique_id=2026379919]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qedeb"]
+
+[node name="BasicBall" type="RigidBody2D" unique_id=1023248236]
 script = ExtResource("1_qedeb")
 value = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1494330800]
+shape = SubResource("CircleShape2D_qedeb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=540576887]
+scale = Vector2(0.16210939, 0.16210939)
+texture = ExtResource("2_aipxk")

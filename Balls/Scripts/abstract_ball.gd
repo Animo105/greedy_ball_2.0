@@ -1,4 +1,4 @@
-@abstract extends Node
+@abstract extends RigidBody2D
 class_name Ball
 
 @export var value : int = 0
