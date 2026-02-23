@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btvm14jbv5qie"]
 
 [ext_resource type="Script" uid="uid://bamgxemelvo32" path="res://Paddles/Scripts/basic_left_paddle.gd" id="1_4l7sc"]
-[ext_resource type="Texture2D" uid="uid://dg1qg8oksdrfe" path="res://Assets/flipper.png" id="2_tanea"]
+[ext_resource type="Texture2D" uid="uid://dg1qg8oksdrfe" path="res://Assets/Paddles/flipper.png" id="2_tanea"]
 
 [node name="PaddleLeft" type="Node2D" unique_id=770522853]
 script = ExtResource("1_4l7sc")
@@ -21,6 +21,6 @@ polygon = PackedVector2Array(-3.0358984, -13.25833, 103.17434, -5.2968063, 103.4
 [node name="Area2D" type="Area2D" parent="." unique_id=1960678925]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=805339490]
-position = Vector2(53.999996, 16)
+position = Vector2(56, 13)
 rotation = 0.5235988
-polygon = PackedVector2Array(52.641018, 11.176913, 43.497425, -36.660255, 7.27499, -65.399345, -44.641014, 2.67949)
+polygon = PackedVector2Array(53.007042, 9.810886, 42.265373, -34.79423, 8.774994, -62.80127, -44.641014, 2.67949)

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dufppkf0mta0y"]
+
+[ext_resource type="Script" uid="uid://cy6wgco5i1j46" path="res://Tests/test_area.gd" id="1_a1ef2"]
+[ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="2_78lmv"]
+[ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="3_h7xqg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1ef2"]
+distance = -793.0
+
+[node name="TestArea" type="Node2D" unique_id=771344711]
+script = ExtResource("1_a1ef2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1859714258]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1814786874]
+shape = SubResource("WorldBoundaryShape2D_a1ef2")
+
+[node name="PaddleRight" parent="." unique_id=763865410 instance=ExtResource("2_78lmv")]
+position = Vector2(862, 476)
+
+[node name="PaddleLeft" parent="." unique_id=770522853 instance=ExtResource("3_h7xqg")]
+position = Vector2(468, 479)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
