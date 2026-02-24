@@ -1,4 +1,4 @@
-@abstract extends StaticBody2D
+@abstract extends CollisionObject2D
 class_name Module
 
 @export var force_value : int = 0
