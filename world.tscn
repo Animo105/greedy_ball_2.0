@@ -29,6 +29,8 @@ position = Vector2(307, 331)
 
 [node name="PaddleLeft" parent="." unique_id=770522853 instance=ExtResource("2_fj7yv")]
 position = Vector2(497, 596)
+launch_power = 1000
 
 [node name="PaddleRight" parent="." unique_id=763865410 instance=ExtResource("3_tlwt5")]
 position = Vector2(801, 593)
+launch_power = 1000

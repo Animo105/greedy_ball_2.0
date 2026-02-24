@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d277cakrbn61u"]
+
+[ext_resource type="Script" uid="uid://dxrk3rdxfvlq3" path="res://Modules/Script/cannon.gd" id="1_4q13q"]
+[ext_resource type="Texture2D" uid="uid://bsioo23aedoaw" path="res://icon.svg" id="2_d6ijs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_66chc"]
+radius = 73.33485
+
+[node name="Cannon" type="Area2D" unique_id=2144926323]
+script = ExtResource("1_4q13q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1983823935]
+texture = ExtResource("2_d6ijs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294245460]
+shape = SubResource("CircleShape2D_66chc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
