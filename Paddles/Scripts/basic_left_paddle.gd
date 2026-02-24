@@ -18,7 +18,6 @@ func action_pressed():
 	for body in area_2d.get_overlapping_bodies():
 		if body is Ball:
 			var mult_dist = 1 + global_position.distance_to(body.global_position)/ 100
-			print(mult_dist)
 			body.apply_impulse(Vector2(0, -launch_power * mult_dist))
 
 func action_released():
