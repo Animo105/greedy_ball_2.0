@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ResourceBall" format=3 uid="uid://j5cklu5nofm7"]
+
+[ext_resource type="Script" uid="uid://mijsdewdwhqe" path="res://Balls/Scripts/ball_res.gd" id="1_7eatx"]
+[ext_resource type="PackedScene" uid="uid://0aoim00od4qc" path="res://Balls/money_ball.tscn" id="1_anrxn"]
+[ext_resource type="Texture2D" uid="uid://7oth6l3vv0sj" path="res://Assets/Balls/gold_ball.png" id="1_loyjf"]
+
+[resource]
+script = ExtResource("1_7eatx")
+ball_name = "Money Ball"
+basic_price = 100.0
+icon_texture = ExtResource("1_loyjf")
+ball_scene = ExtResource("1_anrxn")
+metadata/_custom_type_script = "uid://mijsdewdwhqe"

@@ -2,6 +2,7 @@ extends Node
 
 signal score_changed(new_value : int)
 signal combo_changed(new_value : float)
+signal money_changed(new_value : int)
 
 var score_value : int = 0:
 	set(value):
@@ -12,6 +13,11 @@ var combo_mult : float = 1:
 	set(value):
 		combo_mult = value
 		combo_changed.emit(value)
+
+var money : int = 0:
+	set(value):
+		money = value
+		money_changed.emit(value)
 
 func reset():
 	score_value = 0
