@@ -1,3 +1,4 @@
 extends Node
 
-var loaded_paddles : Array
+var loaded_balls : Array[Ball]
+var loaded_resource_modules : Array[ResourceModule]

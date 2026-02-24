@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dufppkf0mta0y"]
 
 [ext_resource type="Script" uid="uid://cy6wgco5i1j46" path="res://Tests/test_area.gd" id="1_a1ef2"]
-[ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/Loaded/paddle_right.tscn" id="2_78lmv"]
-[ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/Loaded/paddle_left.tscn" id="3_h7xqg"]
+[ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="2_78lmv"]
+[ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="3_h7xqg"]
 [ext_resource type="PackedScene" uid="uid://dh4xu35dfbrpg" path="res://Modules/base_module.tscn" id="4_wu8dm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1ef2"]

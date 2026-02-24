@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ccek4vwlwsvb4" path="res://Assets/Levels/level1ig.png" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cfp62q8rk0trm" path="res://Balls/basic_ball.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/Loaded/paddle_left.tscn" id="2_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/Loaded/paddle_right.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="3_tlwt5"]
+
 
 [node name="World" type="Node2D" unique_id=740165586]
 
