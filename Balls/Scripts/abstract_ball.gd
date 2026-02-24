@@ -9,6 +9,7 @@ func _init() -> void:
 func _collision_on_module(body : Node):
 	if body is Module:
 		body.collision(self)
+		collided_with(body)
 
 func reset():
 	angular_velocity = 0
@@ -16,3 +17,5 @@ func reset():
 
 @export var value : int = 0
 @export var speed : float = 1.0
+
+@abstract func collided_with(module : Module)
