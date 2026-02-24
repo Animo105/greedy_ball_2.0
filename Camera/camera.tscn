@@ -4,4 +4,5 @@
 
 [node name="Camera" type="Camera2D" unique_id=300631930]
 position = Vector2(635, 359)
+position_smoothing_enabled = true
 script = ExtResource("1_alp8d")
