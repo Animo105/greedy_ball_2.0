@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Greedy ball 2.0"
-run/main_scene="uid://wkdijmyr4jx8"
+run/main_scene="uid://xelq07cvc0yo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
@@ -27,13 +27,13 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/stretch/scale_mode="integer"
 
 [file_customization]
 
 folder_colors={
 "res://Assets/": "yellow",
 "res://Balls/": "orange",
+"res://Levels/": "red",
 "res://Modules/": "orange",
 "res://Paddles/": "orange",
 "res://UI/": "green"
