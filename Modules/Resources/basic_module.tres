@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_cl3ax")
 module_name = "Module de base"
+module_id = "basic_module"
 basic_price = 50.0
 metadata/_custom_type_script = "uid://kqpsoqlfevt7"

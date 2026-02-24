@@ -8,6 +8,7 @@ radius = 16.03122
 
 [node name="MoneyBall" type="RigidBody2D" unique_id=1115504229]
 script = ExtResource("1_ymbt5")
+ball_health = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=152104276]
 amount = 40
