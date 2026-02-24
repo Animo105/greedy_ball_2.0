@@ -1,4 +1,24 @@
 extends Node
 
-var score_value : int = 0
-var combo_mult : float = 1
+signal score_changed(new_value : int)
+signal combo_changed(new_value : float)
+
+var score_value : int = 0:
+	set(value):
+		score_value = value
+		score_changed.emit(value)
+
+var combo_mult : float = 1:
+	set(value):
+		combo_mult = value
+		combo_changed.emit(value)
+
+func reset():
+	score_value = 0
+	combo_mult = 0
+
+func reset_combo():
+	combo_mult = 0
+
+func increment_combo(amount : int = 1):
+	combo_mult += 0.01 * amount

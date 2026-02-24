@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://drkrkk6kw5iym"]
+
+[ext_resource type="Script" uid="uid://4tq06nicifjx" path="res://UI/Scripts/score_panel.gd" id="1_qy31m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qy31m"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.5882353)
+
+[node name="ScorePanel" type="PanelContainer" unique_id=1940807635]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qy31m")
+script = ExtResource("1_qy31m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2132269323]
+layout_mode = 2
+alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer" unique_id=582161928]
+layout_mode = 2
+text = "Score : 0"
+horizontal_alignment = 1
+
+[node name="Combo" type="Label" parent="VBoxContainer" unique_id=19854083]
+layout_mode = 2
+text = "Combo : 1.00x"
+horizontal_alignment = 1

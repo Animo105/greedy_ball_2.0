@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="2_78lmv"]
 [ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="3_h7xqg"]
 [ext_resource type="PackedScene" uid="uid://dh4xu35dfbrpg" path="res://Modules/base_module.tscn" id="4_wu8dm"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="5_xoku5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1ef2"]
 distance = -793.0
@@ -26,5 +27,11 @@ launch_power = 1000
 
 [node name="BaseModule" parent="." unique_id=999414212 instance=ExtResource("4_wu8dm")]
 position = Vector2(257, 418)
+
+[node name="ScorePanel" parent="." unique_id=1940807635 instance=ExtResource("5_xoku5")]
+offset_left = 988.0
+offset_top = 147.0
+offset_right = 1137.0
+offset_bottom = 217.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

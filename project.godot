@@ -35,7 +35,8 @@ folder_colors={
 "res://Assets/": "yellow",
 "res://Balls/": "orange",
 "res://Modules/": "orange",
-"res://Paddles/": "orange"
+"res://Paddles/": "orange",
+"res://UI/": "green"
 }
 
 [input]
