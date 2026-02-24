@@ -13,7 +13,7 @@ config_version=5
 config/name="Greedy ball 2.0"
 run/main_scene="uid://wkdijmyr4jx8"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 
