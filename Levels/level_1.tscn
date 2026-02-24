@@ -4,28 +4,30 @@
 [ext_resource type="Script" uid="uid://bow3evl7dyygh" path="res://Levels/Scripts/level_1.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="2_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="3_syshm"]
-[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="5_syshm"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/Shop/score_panel.tscn" id="5_syshm"]
+[ext_resource type="PackedScene" uid="uid://5hgdpxuci6bj" path="res://UI/shop.tscn" id="6_rfktq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_syshm"]
 
 [node name="Level 1" type="Node2D" unique_id=310962128]
+position = Vector2(-24, 2)
 script = ExtResource("1_rf6l5")
 
 [node name="Level1Ig" type="Sprite2D" parent="." unique_id=712186458]
-position = Vector2(658.99994, 363.03473)
+position = Vector2(503.00003, 359)
 scale = Vector2(0.6118755, 0.30676138)
 texture = ExtResource("1_3mhv4")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Level1Ig" unique_id=248013277]
+[node name="Walls" type="StaticBody2D" parent="Level1Ig" unique_id=248013277]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level1Ig/StaticBody2D" unique_id=526979075]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level1Ig/Walls" unique_id=526979075]
 polygon = PackedVector2Array(-411.84845, 446.4879, -374.25903, 456.65503, -370.99036, 664.51184, -250.05072, 787.3363, -294.17737, 866.06995, -455.97498, 708.60266, -451.07202, 453.50574)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Level1Ig/StaticBody2D" unique_id=1210341232]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Level1Ig/Walls" unique_id=1210341232]
 position = Vector2(380.79654, -34.642796)
 polygon = PackedVector2Array(-39.223633, 484.99902, 1.6343994, 481.13074, 39.223755, 488.14844, 40.858032, 736.94666, -114.40234, 897.56323, -161.7976, 809.3816, -42.492188, 696.0051)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Level1Ig/StaticBody2D" unique_id=936264723]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Level1Ig/Walls" unique_id=936264723]
 polygon = PackedVector2Array(-367, 1230, -367, 1118.02, -614.504, 863.75037, -611, 508.425, -480.48987, 133.54114, -611, 16.186, -611, -1111, 612, -1111, 612, 22.706, 480.49, 143.32068, 612, 498.646, 612.8699, 867.01025, 367, 1121.28, 367, 1230, 700, 1230, 700, -1220, -670, -1220, -670, 1230)
 
 [node name="PaddleLeft" parent="Level1Ig" unique_id=770522853 instance=ExtResource("2_rf6l5")]
@@ -38,28 +40,32 @@ position = Vector2(232.07349, 811.59265)
 scale = Vector2(1.6343195, 3.259863)
 launch_power = 800
 
-[node name="StartBallPosition" type="Marker2D" parent="." unique_id=1893021389]
-position = Vector2(446, 552)
+[node name="StartBallPosition" type="Marker2D" parent="Level1Ig" unique_id=1893021389]
+position = Vector2(-339.93854, 609.59436)
+scale = Vector2(1.6343195, 3.259863)
 
 [node name="start" type="Button" parent="." unique_id=485327734]
-offset_left = 113.0
-offset_top = 615.0
-offset_right = 214.0
-offset_bottom = 646.0
+offset_left = 921.0
+offset_top = 120.0
+offset_right = 1022.0
+offset_bottom = 151.0
 text = "Start Round"
+metadata/_edit_use_anchors_ = true
 
 [node name="end" type="Button" parent="." unique_id=916669603]
-offset_left = 116.0
-offset_top = 658.0
-offset_right = 208.0
-offset_bottom = 689.0
+offset_left = 926.0
+offset_top = 154.0
+offset_right = 1018.0
+offset_bottom = 185.0
 text = "End Round"
+metadata/_edit_use_anchors_ = true
 
 [node name="ScorePanel" parent="." unique_id=1940807635 instance=ExtResource("5_syshm")]
-offset_left = 57.0
-offset_top = 47.0
-offset_right = 206.0
-offset_bottom = 152.0
+offset_left = 902.0
+offset_top = 9.0
+offset_right = 1051.0
+offset_bottom = 114.0
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="Area2D" parent="." unique_id=1030817749]
 position = Vector2(0, 800)
@@ -67,6 +73,20 @@ position = Vector2(0, 800)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1719470111]
 shape = SubResource("WorldBoundaryShape2D_syshm")
 
+[node name="CheckButton" type="CheckButton" parent="." unique_id=775462029]
+offset_left = 913.0
+offset_top = 204.0
+offset_right = 1050.0
+offset_bottom = 235.0
+text = "MoneyBall?"
+
+[node name="Shop" parent="." unique_id=1398650869 instance=ExtResource("6_rfktq")]
+offset_left = 1070.0
+offset_top = 95.0
+offset_right = 1260.0
+offset_bottom = 642.0
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="end" to="." method="_on_end_pressed"]
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="ResourceModule" format=3 uid="uid://u7rs75q82no4"]
 
+[ext_resource type="Texture2D" uid="uid://dd5xskmt7488e" path="res://Assets/tkt_c_just_un_cercle.png" id="1_047o3"]
 [ext_resource type="Script" uid="uid://kqpsoqlfevt7" path="res://Modules/Script/module_res.gd" id="1_cl3ax"]
+[ext_resource type="PackedScene" uid="uid://dh4xu35dfbrpg" path="res://Modules/base_module.tscn" id="2_f5s0i"]
 
 [resource]
 script = ExtResource("1_cl3ax")
 module_name = "Module de base"
 module_id = "basic_module"
 basic_price = 50.0
+icon_texture = ExtResource("1_047o3")
+module_scene = ExtResource("2_f5s0i")
 metadata/_custom_type_script = "uid://kqpsoqlfevt7"

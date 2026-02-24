@@ -1,5 +1,5 @@
 extends Node2D
-@onready var start_ball_position: Marker2D = $StartBallPosition
+@onready var start_ball_position: Marker2D = $Level1Ig/StartBallPosition
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,3 +18,10 @@ func _on_end_pressed() -> void:
 func _on_static_body_2d_body_entered(body: Node2D) -> void:
 	if body is Ball:
 		RoundManager.remove_ball(body)
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		RoundManager.ball_type = "money_ball"
+	else:
+		RoundManager.ball_type = ""

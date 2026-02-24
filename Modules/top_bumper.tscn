@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dydktupdscy7j"]
+[gd_scene format=3 uid="uid://bb0ktdlqa8j8v"]
 
-[ext_resource type="Script" uid="uid://ci7ppvho6jg8y" path="res://Modules/Script/top_bumper.gd" id="1_m7s0t"]
+[ext_resource type="Script" path="res://Modules/Script/top_bumper.gd" id="1_m7s0t"]
 [ext_resource type="Texture2D" uid="uid://dm6vdutaikqvs" path="res://Assets/bintel-cookpro.png" id="2_pvevd"]
 
 [node name="TopBumper" type="StaticBody2D" unique_id=55107610]

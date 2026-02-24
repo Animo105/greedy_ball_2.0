@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d1mom0agerkky"]
+
+[ext_resource type="Texture2D" uid="uid://dm6vdutaikqvs" path="res://Assets/bintel-cookpro.png" id="1_1ybge"]
+[ext_resource type="Script" uid="uid://c1xaxu4dcr8n1" path="res://UI/scripts/shop_item.gd" id="1_71gcm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ybge"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[node name="ShopItem" type="PanelContainer" unique_id=714436360]
+offset_right = 106.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ybge")
+script = ExtResource("1_71gcm")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1868504200]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=462936529]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1193265569]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=144293600]
+layout_mode = 2
+texture = ExtResource("1_1ybge")
+expand_mode = 2
+
+[node name="LabelName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=698531963]
+layout_mode = 2
+text = "POTATA"
+
+[node name="LabelPrice" type="Label" parent="MarginContainer/VBoxContainer" unique_id=594355260]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+theme_override_font_sizes/font_size = 12
+text = "PRIX: "

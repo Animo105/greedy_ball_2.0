@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ResourceModule" format=3 uid="uid://bvo8twyheqrsx"]
+
+[ext_resource type="Texture2D" uid="uid://dm6vdutaikqvs" path="res://Assets/bintel-cookpro.png" id="1_4vn1b"]
+[ext_resource type="Script" uid="uid://kqpsoqlfevt7" path="res://Modules/Script/module_res.gd" id="1_o6k8m"]
+[ext_resource type="PackedScene" uid="uid://bb0ktdlqa8j8v" path="res://Modules/top_bumper.tscn" id="2_2nuh6"]
+
+[resource]
+script = ExtResource("1_o6k8m")
+module_name = "Top Bumper"
+module_id = "top_bumbper"
+basic_price = 50.0
+icon_texture = ExtResource("1_4vn1b")
+module_scene = ExtResource("2_2nuh6")
+metadata/_custom_type_script = "uid://kqpsoqlfevt7"

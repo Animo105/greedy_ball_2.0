@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="2_78lmv"]
 [ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="3_h7xqg"]
 [ext_resource type="PackedScene" uid="uid://dh4xu35dfbrpg" path="res://Modules/base_module.tscn" id="4_wu8dm"]
-[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="5_xoku5"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/Shop/score_panel.tscn" id="5_xoku5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1ef2"]
 distance = -793.0
