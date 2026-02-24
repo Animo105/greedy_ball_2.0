@@ -27,8 +27,9 @@ window/stretch/scale_mode="integer"
 
 folder_colors={
 "res://Assets/": "yellow",
+"res://Balls/": "orange",
 "res://Modules/": "orange",
-"res://Paddles/": "blue"
+"res://Paddles/": "orange"
 }
 
 [input]
