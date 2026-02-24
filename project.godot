@@ -39,6 +39,10 @@ folder_colors={
 "res://UI/": "green"
 }
 
+[global_group]
+
+camera="c'est la caméra la"
+
 [input]
 
 paddle_left={

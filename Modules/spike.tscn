@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cylc0xinkyil"]
+
+[ext_resource type="Script" uid="uid://wo6dyob8ykm1" path="res://Modules/Script/spike.gd" id="1_1xcul"]
+[ext_resource type="Texture2D" uid="uid://v0sljwl7egn5" path="res://Assets/do not share new game +.png" id="1_4opw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1xcul"]
+radius = 30.0
+
+[node name="Spike" type="StaticBody2D" unique_id=622977343]
+script = ExtResource("1_1xcul")
+force_value = 100
+point_value = -100
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=624428182]
+position = Vector2(-1.0000038, -2.0000038)
+scale = Vector2(0.06386719, 0.06386719)
+texture = ExtResource("1_4opw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2098241427]
+shape = SubResource("CircleShape2D_1xcul")

@@ -8,7 +8,7 @@ radius = 16.03122
 
 [node name="BasicBall" type="RigidBody2D" unique_id=1023248236]
 script = ExtResource("1_qedeb")
-value = 1
+ball_health = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1494330800]
 shape = SubResource("CircleShape2D_qedeb")

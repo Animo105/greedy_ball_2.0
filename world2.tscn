@@ -3,23 +3,46 @@
 [ext_resource type="PackedScene" uid="uid://cfp62q8rk0trm" path="res://Balls/basic_ball.tscn" id="1_bkyvu"]
 [ext_resource type="PackedScene" uid="uid://dh4xu35dfbrpg" path="res://Modules/base_module.tscn" id="2_xljjp"]
 [ext_resource type="PackedScene" uid="uid://d277cakrbn61u" path="res://Modules/cannon.tscn" id="3_xljjp"]
+[ext_resource type="PackedScene" uid="uid://cylc0xinkyil" path="res://Modules/spike.tscn" id="4_xdth8"]
+[ext_resource type="PackedScene" uid="uid://di76paojnw3hv" path="res://Camera/camera.tscn" id="5_vef27"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="6_mu6c3"]
+[ext_resource type="PackedScene" uid="uid://dydktupdscy7j" path="res://Modules/top_bumper.tscn" id="7_46256"]
 
 [node name="World2" type="Node2D" unique_id=1972564168]
 
 [node name="BaseModule" parent="." unique_id=24662692 instance=ExtResource("2_xljjp")]
-position = Vector2(470, 483)
+position = Vector2(470, 517)
 
 [node name="BaseModule2" parent="." unique_id=999414212 instance=ExtResource("2_xljjp")]
-position = Vector2(754, 484)
+position = Vector2(721, 449)
 
 [node name="BaseModule3" parent="." unique_id=361653831 instance=ExtResource("2_xljjp")]
 position = Vector2(617, 551)
 
 [node name="BaseModule4" parent="." unique_id=1179548277 instance=ExtResource("2_xljjp")]
-position = Vector2(341, 457)
+position = Vector2(373, 424)
 
 [node name="Cannon" parent="." unique_id=1779885907 instance=ExtResource("3_xljjp")]
-position = Vector2(619, 342)
+position = Vector2(825, 324)
 
 [node name="BasicBall" parent="." unique_id=1023248236 instance=ExtResource("1_bkyvu")]
-position = Vector2(475, 283)
+position = Vector2(480, 391)
+
+[node name="Spike" parent="." unique_id=622977343 instance=ExtResource("4_xdth8")]
+position = Vector2(336, 242)
+
+[node name="Camera" parent="." unique_id=300631930 instance=ExtResource("5_vef27")]
+
+[node name="Spike2" parent="." unique_id=1267638004 instance=ExtResource("4_xdth8")]
+position = Vector2(817, 157)
+
+[node name="Spike3" parent="." unique_id=1297921714 instance=ExtResource("4_xdth8")]
+position = Vector2(361, 310)
+
+[node name="Spike4" parent="." unique_id=284425805 instance=ExtResource("4_xdth8")]
+position = Vector2(802, 211)
+
+[node name="ScorePanel" parent="." unique_id=1940807635 instance=ExtResource("6_mu6c3")]
+
+[node name="TopBumper" parent="." unique_id=55107610 instance=ExtResource("7_46256")]
+position = Vector2(574, 405)
