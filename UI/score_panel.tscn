@@ -28,3 +28,11 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Combo : 1.00x"
 horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1993756846]
+layout_mode = 2
+
+[node name="Money" type="Label" parent="VBoxContainer" unique_id=1265568581]
+layout_mode = 2
+text = "Money : 0$"
+horizontal_alignment = 1

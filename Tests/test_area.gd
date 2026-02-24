@@ -1,13 +1,19 @@
 extends Node2D
 
 const BASIC_BALL = preload("uid://cfp62q8rk0trm")
+const MONEY_BALL = preload("uid://0aoim00od4qc")
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
-		var ball : BasicBall = BASIC_BALL.instantiate()
-		add_child(ball)
-		ball.global_position = get_global_mouse_position()
+		if event.button_index == 1:
+			var ball : Ball = BASIC_BALL.instantiate()
+			add_child(ball)
+			ball.global_position = get_global_mouse_position()
+		elif event.button_index == 2:
+			var ball : Ball = MONEY_BALL.instantiate()
+			add_child(ball)
+			ball.global_position = get_global_mouse_position()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
