@@ -13,7 +13,7 @@ var tween : Tween = null
 func _ready() -> void:
 	size = OPENED_SIZE
 	for module : ResourceModule in DataManager.loaded_resource_modules.values():
-		var shop_item : ShopItem = ShopItem.instantiate(module.icon_texture, module.module_name, int(module.basic_price))
+		var shop_item : ShopItem = ShopItem.instantiate(module)
 		shop_panel.add_child(shop_item)
 	GameManager.round_started.connect(close)
 	GameManager.round_ended.connect(open)
