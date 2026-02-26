@@ -14,13 +14,13 @@ clip_contents = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 240.0
-offset_bottom = 555.0
+offset_bottom = 720.0
 script = ExtResource("1_pogqh")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2105682223]
 layout_mode = 0
 offset_right = 240.0
-offset_bottom = 555.0
+offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_uvggs")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=317251051]
@@ -35,7 +35,7 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer" unique_id=296474273]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 650)
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 3

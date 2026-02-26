@@ -3,8 +3,8 @@ extends Control
 @onready var shop_panel: VBoxContainer = $PanelContainer/VBoxContainer/ScrollContainer/ShopPanel
 
 
-const OPENED_SIZE : Vector2 = Vector2(240, 555)
-const CLOSED_SIZE : Vector2 = Vector2(0, 555)
+const OPENED_SIZE : Vector2 = Vector2(240, 720)
+const CLOSED_SIZE : Vector2 = Vector2(0, 720)
 
 var tween : Tween = null
 
