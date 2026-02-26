@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://5hgdpxuci6bj"]
+
+[ext_resource type="Script" uid="uid://bf8tebowobl1n" path="res://UI/Scripts/shop.gd" id="1_pogqh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvggs"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.39215687)
+
+[node name="Shop" type="Control" unique_id=147628273]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 720.0
+script = ExtResource("1_pogqh")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2105682223]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uvggs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=317251051]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=95290168]
+layout_mode = 2
+text = "Modules Shop"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1937774943]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer" unique_id=296474273]
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="ShopPanel" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer" unique_id=835797014]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

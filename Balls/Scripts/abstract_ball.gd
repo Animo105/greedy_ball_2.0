@@ -1,6 +1,10 @@
 @abstract extends RigidBody2D
 class_name Ball
 
+@export var ball_health: int = 3
+@export var ball_damage: int = 1
+@export var max_velocity : int = 700
+
 func _init() -> void:
 	collision_mask = 1
 	collision_layer = 2
@@ -23,9 +27,8 @@ func reset():
 	angular_velocity = 0
 	linear_velocity = Vector2.ZERO
 
-
-
-@export var ball_health: int = 3
-@export var ball_damage: int = 1
+func apply_max_velocity():
+	if linear_velocity.length() > max_velocity:
+		linear_velocity = linear_velocity.normalized() * max_velocity
 
 @abstract func collided_with(module : Module)

@@ -29,5 +29,6 @@ func open():
 	if tween:
 		tween.kill()
 	tween = create_tween()
+	tween.set_parallel()
 	tween.tween_property(self, "visible", true, 0)
 	tween.tween_property(self,"size", OPENED_SIZE, 0.1)
