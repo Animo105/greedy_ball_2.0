@@ -3,6 +3,7 @@ extends Node
 signal game_state_changed(value : GameStates)
 signal round_ended
 signal round_started
+signal module_placed
 
 enum GameStates {
 	NONE,
@@ -20,14 +21,21 @@ func _process(_delta: float) -> void:
 	match game_state:
 		GameStates.BUILDING:
 			if not module_in_building:
+				cancel_build()
 				return
 			module_in_building.global_position = get_viewport().get_mouse_position()
+			module_in_building.area_placement.show_placing_preview()
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
+	if game_state == GameStates.NONE : return
 	if event is InputEventMouseButton && event.is_pressed():
-		if event.index_button == 1:
+		if event.button_index == 1:
 			if game_state == GameStates.BUILDING:
-				pass
+				if module_in_building.area_placement.is_placable():
+					module_in_building.area_placement.hide_preview()
+					module_in_building = null
+					game_state = GameStates.NONE
+					module_placed.emit()
 			elif game_state == GameStates.REMOVING:
 				pass
 
@@ -77,11 +85,18 @@ func end_round() -> void:
 # BUILDING VARIABLES AND FUNCTIONS
 var modules : Array[Module]
 var module_in_building : Module = null
+var can_build : bool = false
 
 func build_module(module : Module, price : float):
-	if game_state != GameStates.NONE :
-		return
+	if game_state != GameStates.NONE: return
+	if !module.area_placement: return
 	module_in_building = module
-	get_tree().current_scene.add_child(module_in_building)
+	get_tree().current_scene.add_child(module)
+	module_in_building.area_placement.show_placing_preview()
 	game_state = GameStates.BUILDING
-	
+
+func cancel_build():
+	if game_state != GameStates.BUILDING: return
+	module_in_building.queue_free()
+	module_in_building = null
+	game_state = GameStates.NONE

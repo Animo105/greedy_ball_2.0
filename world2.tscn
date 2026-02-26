@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cfp62q8rk0trm" path="res://Balls/basic_ball.tscn" id="1_bkyvu"]
 [ext_resource type="PackedScene" uid="uid://dh4xu35dfbrpg" path="res://Modules/base_module.tscn" id="2_xljjp"]
 [ext_resource type="PackedScene" uid="uid://d277cakrbn61u" path="res://Modules/cannon.tscn" id="3_xljjp"]
-[ext_resource type="PackedScene" path="res://Modules/spike.tscn" id="4_xdth8"]
+[ext_resource type="PackedScene" uid="uid://8tbq2wpctr57" path="res://Modules/spike.tscn" id="4_xdth8"]
 [ext_resource type="PackedScene" uid="uid://di76paojnw3hv" path="res://Camera/camera.tscn" id="5_vef27"]
-[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/Shop/score_panel.tscn" id="6_mu6c3"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="6_mu6c3"]
 [ext_resource type="PackedScene" uid="uid://bb0ktdlqa8j8v" path="res://Modules/top_bumper.tscn" id="7_46256"]
 
 [node name="World2" type="Node2D" unique_id=1972564168]
