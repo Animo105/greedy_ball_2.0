@@ -1,15 +1,20 @@
-[gd_scene format=3 uid="uid://cylc0xinkyil"]
+[gd_scene format=3 uid="uid://8tbq2wpctr57"]
 
-[ext_resource type="Script" uid="uid://wo6dyob8ykm1" path="res://Modules/Script/spike.gd" id="1_1xcul"]
+[ext_resource type="Script" path="res://Modules/Script/spike.gd" id="1_1xcul"]
 [ext_resource type="Texture2D" uid="uid://v0sljwl7egn5" path="res://Assets/do not share new game +.png" id="1_4opw6"]
+[ext_resource type="Script" uid="uid://bx14nuc4h874n" path="res://Modules/Script/module_placement_area.gd" id="3_gwopm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xcul"]
 radius = 30.0
 
-[node name="Spike" type="StaticBody2D" unique_id=622977343]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwopm"]
+radius = 33.01515
+
+[node name="Spike" type="StaticBody2D" unique_id=622977343 node_paths=PackedStringArray("AreaPlacement")]
 script = ExtResource("1_1xcul")
 force_value = 100
 point_value = -100
+AreaPlacement = NodePath("AreaModulePlacement")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=624428182]
 position = Vector2(-1.0000038, -2.0000038)
@@ -18,3 +23,11 @@ texture = ExtResource("1_4opw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2098241427]
 shape = SubResource("CircleShape2D_1xcul")
+
+[node name="AreaModulePlacement" type="Area2D" parent="." unique_id=1275096098 node_paths=PackedStringArray("collision_shape")]
+script = ExtResource("3_gwopm")
+collision_shape = NodePath("CollisionShape2D")
+metadata/_custom_type_script = "uid://bx14nuc4h874n"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaModulePlacement" unique_id=1036143980]
+shape = SubResource("CircleShape2D_gwopm")

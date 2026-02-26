@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" path="res://Modules/Script/top_bumper.gd" id="1_m7s0t"]
 [ext_resource type="Texture2D" uid="uid://dm6vdutaikqvs" path="res://Assets/bintel-cookpro.png" id="2_pvevd"]
+[ext_resource type="Script" uid="uid://bx14nuc4h874n" path="res://Modules/Script/module_placement_area.gd" id="3_pvevd"]
 
-[node name="TopBumper" type="StaticBody2D" unique_id=55107610]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pvevd"]
+radius = 56.32051
+
+[node name="TopBumper" type="StaticBody2D" unique_id=55107610 node_paths=PackedStringArray("AreaPlacement")]
 script = ExtResource("1_m7s0t")
 force_value = 500
+AreaPlacement = NodePath("AreaModulePlacement")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=4371678]
 position = Vector2(-2.3841858e-07, 1)
@@ -14,3 +19,11 @@ texture = ExtResource("2_pvevd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1868367099]
 polygon = PackedVector2Array(-48, -32, 47, -32, 0, 45)
+
+[node name="AreaModulePlacement" type="Area2D" parent="." unique_id=19556420 node_paths=PackedStringArray("collision_shape")]
+script = ExtResource("3_pvevd")
+collision_shape = NodePath("CollisionShape2D")
+metadata/_custom_type_script = "uid://bx14nuc4h874n"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaModulePlacement" unique_id=1189935135]
+shape = SubResource("CircleShape2D_pvevd")
