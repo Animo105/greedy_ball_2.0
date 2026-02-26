@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dfpvpsck4eg7o"]
+
+[ext_resource type="PackedScene" uid="uid://5hgdpxuci6bj" path="res://UI/Shop/shop.tscn" id="1_4e73c"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="2_v2jwi"]
+
+[node name="GameHUD" type="CanvasLayer" unique_id=718596449]
+
+[node name="Shop" parent="." unique_id=147628273 instance=ExtResource("1_4e73c")]
+custom_minimum_size = Vector2(0, 555)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -555.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1866099004]
+custom_minimum_size = Vector2(240, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_bottom = 165.0
+grow_horizontal = 0
+
+[node name="ScorePanel" parent="CenterContainer" unique_id=1940807635 instance=ExtResource("2_v2jwi")]
+custom_minimum_size = Vector2(200, 125)
+layout_mode = 2

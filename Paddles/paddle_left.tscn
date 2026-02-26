@@ -16,13 +16,14 @@ texture = ExtResource("2_tanea")
 [node name="StaticBody2D" type="StaticBody2D" parent="Paddle" unique_id=977498320]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Paddle/StaticBody2D" unique_id=2004299344]
-polygon = PackedVector2Array(-3.0358984, -13.25833, 103.17434, -5.2968063, 103.47818, 7.229473, -3.6602535, 13.660254, -11.660254, -0.19615221)
+polygon = PackedVector2Array(-4.901924, -14.490381, 105.40639, -5.4307823, 104.710236, 5.3634453, -6.2583303, 15.160254, -13.026279, -0.56217766)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1960678925]
+[node name="Area2D" type="Area2D" parent="." unique_id=1605492210]
+rotation = 0.5235988
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=805339490]
-position = Vector2(56, 13)
-rotation = 0.5235988
-polygon = PackedVector2Array(53.007042, 9.810886, 42.265373, -34.79423, 8.774994, -62.80127, -44.641014, 2.67949)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=120731733]
+polygon = PackedVector2Array(59.638435, -88.70319, 90.06664, -52, 107.138435, -6.4307823, 8.490381, -15.294229)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

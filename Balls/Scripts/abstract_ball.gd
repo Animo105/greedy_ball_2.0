@@ -6,6 +6,9 @@ func _init() -> void:
 	collision_layer = 2
 	max_contacts_reported = 10
 	contact_monitor = true
+	var physic_material : PhysicsMaterial = PhysicsMaterial.new()
+	physic_material.bounce = 0.3
+	physics_material_override = physic_material
 	body_entered.connect(_collision_on_module)
 
 func _collision_on_module(body : Node):
@@ -19,7 +22,9 @@ func _collision_on_module(body : Node):
 func reset():
 	angular_velocity = 0
 	linear_velocity = Vector2.ZERO
-	
+
+
+
 @export var ball_health: int = 3
 @export var ball_damage: int = 1
 
