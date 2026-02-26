@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://d1mom0agerkky"]
 
 [ext_resource type="Texture2D" uid="uid://dm6vdutaikqvs" path="res://Assets/bintel-cookpro.png" id="1_1ybge"]
-[ext_resource type="Script" uid="uid://c1xaxu4dcr8n1" path="res://UI/scripts/shop_item.gd" id="1_71gcm"]
+[ext_resource type="Script" uid="uid://c1xaxu4dcr8n1" path="res://UI/Scripts/shop_item.gd" id="1_71gcm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ybge"]
 bg_color = Color(0, 0, 0, 0.39215687)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="ShopItem" type="PanelContainer" unique_id=714436360]
 offset_right = 106.0

@@ -19,6 +19,8 @@ texture = ExtResource("2_tanea")
 polygon = PackedVector2Array(-3.0358984, -13.25833, 103.17434, -5.2968063, 103.47818, 7.229473, -3.6602535, 13.660254, -11.660254, -0.19615221)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1960678925]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=805339490]
 position = Vector2(56, 13)

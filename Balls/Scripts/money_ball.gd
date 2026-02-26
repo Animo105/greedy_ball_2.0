@@ -7,6 +7,7 @@ func _ready() -> void:
 
 func collided_with(module : Module):
 	ScoreManager.score_value += int(module.point_value/2.0)
+	ScoreManager.increment_combo()
 	ScoreManager.money += 1
 
 func _physics_process(_delta: float) -> void:

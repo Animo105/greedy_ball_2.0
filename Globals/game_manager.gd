@@ -1,6 +1,8 @@
 extends Node
 
 signal game_state_changed(value : GameStates)
+signal round_ended
+signal round_started
 
 enum GameStates {
 	NONE,
@@ -19,8 +21,24 @@ var starting_ball_positon : Vector2 = Vector2.ZERO
 var balls : Array[Ball]
 var ball_type : String = ""
 
-func start_round():
+func remove_ball(ball : Ball) -> bool:
+	var idx = balls.find(ball)
+	if idx == -1:
+		return false
+	ball.queue_free()
+	balls.remove_at(idx)
+	if balls.is_empty():
+		end_round()
+	return true
+
+func add_ball(ball : Ball) -> bool:
 	if game_state != GameStates.PLAYING:
+		return false
+	balls.append(ball)
+	return true
+
+func start_round() -> void:
+	if game_state == GameStates.NONE:
 		var ball : Ball = null
 		if ball_type.is_empty():
 			ball = DataManager.basic_ball.instantiate()
@@ -30,18 +48,12 @@ func start_round():
 		balls.append(ball)
 		ball.global_position = starting_ball_positon
 		game_state = GameStates.PLAYING
+		round_started.emit()
 
-func remove_ball(ball : Ball):
-	var idx = balls.find(ball)
-	if idx != -1:
-		ball.queue_free()
-		balls.remove_at(idx)
-		if balls.is_empty():
-			end_round()
-
-func end_round():
+func end_round() -> void:
 	if game_state == GameStates.PLAYING:
 		for ball in balls:
 			ball.queue_free()
 		balls = []
 		game_state = GameStates.NONE
+		round_ended.emit()

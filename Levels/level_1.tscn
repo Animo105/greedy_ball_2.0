@@ -10,11 +10,10 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_syshm"]
 
 [node name="Level 1" type="Node2D" unique_id=310962128]
-position = Vector2(-24, 2)
 script = ExtResource("1_rf6l5")
 
 [node name="Level1Ig" type="Sprite2D" parent="." unique_id=712186458]
-position = Vector2(503.00003, 359)
+position = Vector2(498.00003, 385.00003)
 scale = Vector2(0.6118755, 0.30676138)
 texture = ExtResource("1_3mhv4")
 
@@ -69,6 +68,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="Area2D" parent="." unique_id=1030817749]
 position = Vector2(0, 800)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1719470111]
 shape = SubResource("WorldBoundaryShape2D_syshm")

@@ -2,6 +2,8 @@
 class_name Ball
 
 func _init() -> void:
+	collision_mask = 1
+	collision_layer = 2
 	max_contacts_reported = 10
 	contact_monitor = true
 	body_entered.connect(_collision_on_module)
