@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
-		if event.index_button == 1:
+		if event.button_index == 1:
 			if game_state == GameStates.BUILDING:
 				pass
 			elif game_state == GameStates.REMOVING:

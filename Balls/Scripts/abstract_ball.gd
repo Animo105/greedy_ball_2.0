@@ -20,6 +20,7 @@ func reset():
 	angular_velocity = 0
 	linear_velocity = Vector2.ZERO
 	
-@export var ball_health: int
+@export var ball_health: int = 3
+@export var ball_damage: int = 1
 
 @abstract func collided_with(module : Module)

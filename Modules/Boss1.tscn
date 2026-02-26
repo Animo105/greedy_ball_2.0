@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cfhbh53yaeqbp"]
+
+[ext_resource type="Texture2D" uid="uid://dfies4ashhsyo" path="res://Assets/image-removebg-preview.png" id="1_3vkks"]
+[ext_resource type="Script" uid="uid://cdyafnu0jc1hq" path="res://Modules/Script/boss1.gd" id="1_dwaqh"]
+
+[node name="Boss1" type="StaticBody2D" unique_id=1099846232]
+script = ExtResource("1_dwaqh")
+force_value = 400
+point_value = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1643194132]
+position = Vector2(0, -13)
+texture = ExtResource("1_3vkks")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1804657627]
+polygon = PackedVector2Array(-104, 95, 110, 94, 32, -101, -26, -102)
