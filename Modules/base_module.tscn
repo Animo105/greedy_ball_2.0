@@ -7,10 +7,10 @@
 load_path = "res://.godot/imported/tkt_c_just_un_cercle.png-db36d5ac7029dfc481c2255383362301.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gp36c"]
-radius = 66.007576
+radius = 37.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ssnry"]
-radius = 96.42095
+radius = 44.0
 
 [node name="BaseModule" type="StaticBody2D" unique_id=999414212 node_paths=PackedStringArray("area_placement")]
 script = ExtResource("1_uuc6c")
@@ -20,6 +20,7 @@ area_placement = NodePath("AreaModulePlacement")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039433539]
 modulate = Color(0, 0.71831214, 0.8202066, 1)
+scale = Vector2(0.5859375, 0.5859375)
 texture = SubResource("CompressedTexture2D_uuc6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1140759092]

@@ -9,8 +9,8 @@ force_value = 400
 point_value = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1643194132]
-position = Vector2(0, -13)
+scale = Vector2(0.6111111, 0.6111111)
 texture = ExtResource("1_3vkks")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1804657627]
-polygon = PackedVector2Array(-104, 95, 110, 94, 32, -101, -26, -102)
+polygon = PackedVector2Array(-64, 69, 72, 68, 29, -50, -23, -49)

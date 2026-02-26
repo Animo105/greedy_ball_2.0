@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfp62q8rk0trm" path="res://Balls/basic_ball.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://cylc0xinkyil" path="res://Modules/spike.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://8tbq2wpctr57" path="res://Modules/spike.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://di76paojnw3hv" path="res://Camera/camera.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://cfhbh53yaeqbp" path="res://Modules/Boss1.tscn" id="7_pkg7o"]
 

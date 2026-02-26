@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://bx14nuc4h874n" path="res://Modules/Script/module_placement_area.gd" id="3_d6ijs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66chc"]
-radius = 73.33485
+radius = 37.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6ijs"]
-radius = 106.11786
+radius = 80.0
 
 [node name="Cannon" type="Area2D" unique_id=2144926323 node_paths=PackedStringArray("area_placement")]
 collision_mask = 3
@@ -16,6 +16,7 @@ script = ExtResource("1_4q13q")
 area_placement = NodePath("AreaModulePlacement")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1983823935]
+scale = Vector2(0.59375, 0.59375)
 texture = ExtResource("2_d6ijs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294245460]
