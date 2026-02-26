@@ -6,6 +6,16 @@ const COLOR_GREEN : Color = Color(0.0, 0.863, 0.235, 0.365)
 const COLOR_RED : Color = Color(0.843, 0.09, 0.173, 0.365)
 
 @export var collision_shape : CollisionShape2D
+var parent_module : Module
+
+func is_placable() -> bool:
+	var placeable : bool = false
+	for area : Area2D in get_overlapping_areas():
+		if area is AreaModulePlacement:
+			return false
+		if area is AreaPlacable:
+			placeable = true
+	return placeable
 
 func _ready() -> void:
 	if !collision_shape:
@@ -21,7 +31,13 @@ func _ready() -> void:
 	area_exited.connect(_on_area_exit)
 
 func show_preview():
-	collision_shape.shape.draw(get_canvas_item(), COLOR_YELLOW)
+	collision_shape.shape.draw.call_deferred(get_canvas_item(), COLOR_YELLOW)
+
+func show_placing_preview():
+	hide_preview()
+	var color : Color = COLOR_GREEN if is_placable() else COLOR_RED
+	collision_shape.shape.draw.call_deferred(get_canvas_item(), color)
+		
 
 func hide_preview():
 	queue_redraw()

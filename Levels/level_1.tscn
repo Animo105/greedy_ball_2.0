@@ -4,10 +4,14 @@
 [ext_resource type="Script" uid="uid://bow3evl7dyygh" path="res://Levels/Scripts/level_1.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="2_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="3_syshm"]
-[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/Shop/score_panel.tscn" id="5_syshm"]
-[ext_resource type="PackedScene" uid="uid://5hgdpxuci6bj" path="res://UI/shop.tscn" id="6_rfktq"]
+[ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="5_syshm"]
+[ext_resource type="PackedScene" uid="uid://5hgdpxuci6bj" path="res://UI/Shop/shop.tscn" id="6_rfktq"]
+[ext_resource type="Script" uid="uid://bh2a6ip3qc00t" path="res://Modules/Script/area_placable_location.gd" id="7_0urlm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_syshm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77x7w"]
+size = Vector2(736, 344)
 
 [node name="Level 1" type="Node2D" unique_id=310962128]
 script = ExtResource("1_rf6l5")
@@ -87,7 +91,23 @@ offset_top = 95.0
 offset_right = 1260.0
 offset_bottom = 642.0
 
+[node name="Button" type="Button" parent="." unique_id=168310551]
+offset_left = 962.0
+offset_top = 318.0
+offset_right = 1018.0
+offset_bottom = 349.0
+text = "BUILD"
+
+[node name="AreaPlacable" type="Area2D" parent="." unique_id=1543458664]
+script = ExtResource("7_0urlm")
+metadata/_custom_type_script = "uid://bh2a6ip3qc00t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPlacable" unique_id=554126089]
+position = Vector2(496, 221)
+shape = SubResource("RectangleShape2D_77x7w")
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="end" to="." method="_on_end_pressed"]
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

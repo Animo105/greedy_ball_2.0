@@ -10,11 +10,11 @@ radius = 30.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwopm"]
 radius = 33.01515
 
-[node name="Spike" type="StaticBody2D" unique_id=622977343 node_paths=PackedStringArray("AreaPlacement")]
+[node name="Spike" type="StaticBody2D" unique_id=622977343 node_paths=PackedStringArray("area_placement")]
 script = ExtResource("1_1xcul")
 force_value = 100
 point_value = -100
-AreaPlacement = NodePath("AreaModulePlacement")
+area_placement = NodePath("AreaModulePlacement")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=624428182]
 position = Vector2(-1.0000038, -2.0000038)

@@ -28,3 +28,6 @@ func reset_combo():
 
 func increment_combo(amount : int = 1):
 	combo_mult += 0.01 * amount
+
+func increment_score(amount : int = 1):
+	score_value += int(amount * combo_mult)

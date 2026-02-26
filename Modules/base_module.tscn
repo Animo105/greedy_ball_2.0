@@ -12,11 +12,11 @@ radius = 66.007576
 [sub_resource type="CircleShape2D" id="CircleShape2D_ssnry"]
 radius = 96.42095
 
-[node name="BaseModule" type="StaticBody2D" unique_id=999414212 node_paths=PackedStringArray("AreaPlacement")]
+[node name="BaseModule" type="StaticBody2D" unique_id=999414212 node_paths=PackedStringArray("area_placement")]
 script = ExtResource("1_uuc6c")
 force_value = 500
 point_value = 10
-AreaPlacement = NodePath("AreaModulePlacement")
+area_placement = NodePath("AreaModulePlacement")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039433539]
 modulate = Color(0, 0.71831214, 0.8202066, 1)

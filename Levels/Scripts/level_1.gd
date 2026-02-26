@@ -25,3 +25,7 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 		GameManager.ball_type = "money_ball"
 	else:
 		GameManager.ball_type = ""
+
+
+func _on_button_pressed() -> void:
+	GameManager.build_module(DataManager.loaded_resource_modules["basic_module"].module_scene.instantiate(), 100)
