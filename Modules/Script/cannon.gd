@@ -1,5 +1,6 @@
 extends Module
 
+@warning_ignore("unused_parameter")
 func collision(ball : Ball):
 	pass
 
