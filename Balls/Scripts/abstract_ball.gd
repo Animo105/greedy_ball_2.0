@@ -3,7 +3,7 @@ class_name Ball
 
 @export var ball_health: int = 3
 @export var ball_damage: int = 1
-@export var max_velocity : int = 700
+@export var max_velocity : int = 1000
 
 func _init() -> void:
 	collision_mask = 1
@@ -23,6 +23,9 @@ func _collision_on_module(body : Node):
 		if ball_health == 0:
 			queue_free()
 
+func _physics_process(_adelta: float) -> void:
+	apply_max_velocity()
+
 func reset():
 	angular_velocity = 0
 	linear_velocity = Vector2.ZERO
@@ -30,5 +33,6 @@ func reset():
 func apply_max_velocity():
 	if linear_velocity.length() > max_velocity:
 		linear_velocity = linear_velocity.normalized() * max_velocity
+
 
 @abstract func collided_with(module : Module)
