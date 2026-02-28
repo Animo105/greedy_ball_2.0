@@ -8,7 +8,6 @@
 script = ExtResource("1_cl3ax")
 module_name = "Module de base"
 module_id = "basic_module"
-basic_price = 50.0
 icon_texture = ExtResource("1_047o3")
 module_scene = ExtResource("2_f5s0i")
 metadata/_custom_type_script = "uid://kqpsoqlfevt7"

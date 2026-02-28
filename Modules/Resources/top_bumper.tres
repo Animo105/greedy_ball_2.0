@@ -8,7 +8,6 @@
 script = ExtResource("1_o6k8m")
 module_name = "Top Bumper"
 module_id = "top_bumbper"
-basic_price = 50.0
 icon_texture = ExtResource("1_4vn1b")
 module_scene = ExtResource("2_2nuh6")
 metadata/_custom_type_script = "uid://kqpsoqlfevt7"

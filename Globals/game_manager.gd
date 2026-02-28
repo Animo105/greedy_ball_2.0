@@ -3,9 +3,11 @@ extends Node
 signal game_state_changed(value : GameStates)
 signal round_ended
 signal round_started
-signal module_placed
+signal build_module_placed
+signal build_module_canceled
 signal delete_mode_entered
 signal delete_mode_exited
+signal deleted_module(module_type : String)
 
 enum GameStates {
 	NONE,
@@ -82,14 +84,16 @@ func end_round() -> void:
 
 
 # BUILDING VARIABLES AND FUNCTIONS
-var modules : Array[Module]
+var modules : Dictionary[Module, String]
 var module_in_building : Module = null
+var module_in_building_id : String = ""
 var can_build : bool = false
 
-func build_module(module : Module, _price : float):
+func build_module(module : Module, module_id : String):
 	if game_state != GameStates.NONE: return
 	if !module.area_placement: return
 	module_in_building = module
+	module_in_building_id = module_id
 	get_tree().current_scene.add_child(module)
 	module_in_building.area_placement.show_placing_preview()
 	game_state = GameStates.BUILDING
@@ -97,18 +101,21 @@ func build_module(module : Module, _price : float):
 func place_module():
 	if module_in_building && module_in_building.area_placement.is_placable():
 		module_in_building.area_placement.hide_preview()
-		modules.append(module_in_building)
+		modules[module_in_building] = module_in_building_id
 		module_in_building.area_placement.module_mouse_entered.connect(_hover_module_in)
 		module_in_building.area_placement.module_mouse_exited.connect(_hover_module_out)
 		module_in_building = null
+		module_in_building_id = ""
 		game_state = GameStates.NONE
-		module_placed.emit()
+		build_module_placed.emit()
 
 func cancel_build():
 	if game_state != GameStates.BUILDING: return
 	module_in_building.queue_free()
 	module_in_building = null
+	module_in_building_id = ""
 	game_state = GameStates.NONE
+	build_module_canceled.emit()
 
 
 # DELETION VARIABLES AND FUNCTIONS
@@ -116,23 +123,24 @@ var hovered_module : Module = null
 
 func delete_module():
 	if not hovered_module: return
-	var idx = modules.find(hovered_module)
-	if idx == -1: return
-	modules.remove_at(idx)
+	if not modules.has(hovered_module): return
+	var module_id = modules[hovered_module]
+	modules.erase(hovered_module)
 	hovered_module.queue_free()
 	hovered_module = null
+	deleted_module.emit(module_id)
 
 func enter_delete_mode():
 	if game_state == GameStates.NONE:
 		game_state = GameStates.REMOVING
-		for module in modules:
+		for module in modules.keys():
 			module.area_placement.show_preview()
 		delete_mode_entered.emit()
 
 func exit_delete_mode():
 	if game_state == GameStates.REMOVING:
 		game_state = GameStates.NONE
-		for module in modules:
+		for module in modules.keys():
 			module.area_placement.hide_preview()
 		delete_mode_exited.emit()
 

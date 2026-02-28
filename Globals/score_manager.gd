@@ -2,7 +2,7 @@ extends Node
 
 signal score_changed(new_value : int)
 signal combo_changed(new_value : float)
-signal money_changed(new_value : int)
+signal money_changed(new_value : float)
 signal round_score_changed(new_value : int)
 
 var round_score : int = 0:
@@ -20,7 +20,7 @@ var combo_mult : float = 1:
 		combo_mult = value
 		combo_changed.emit(value)
 
-var money : int = 0:
+var money : float = 0:
 	set(value):
 		money = value
 		money_changed.emit(value)

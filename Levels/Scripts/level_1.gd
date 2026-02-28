@@ -5,6 +5,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.starting_ball_positon = start_ball_position.global_position
+	ScoreManager.money = 100
 
 
 func _on_start_pressed() -> void:
@@ -25,7 +26,3 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 		GameManager.ball_type = "money_ball"
 	else:
 		GameManager.ball_type = ""
-
-
-func _on_button_pressed() -> void:
-	GameManager.build_module(DataManager.loaded_resource_modules["basic_module"].module_scene.instantiate(), 100)

@@ -52,4 +52,4 @@ func _update_combo(value : float):
 	combo.text = "Combo: %0.2fx" % value
 
 func _update_money(value : float):
-	money.text = "Money: %s$" % value
+	money.text = "Money: %0.2f$" % value
