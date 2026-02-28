@@ -16,6 +16,10 @@ enum GameStates {
 	PLAYING,
 }
 
+var difficulty_sell_percentage : float = 1.0
+var difficulty_money_gain_percentage : float = 1.0
+var difficulty_score_gain_percentage : float = 1.0
+
 var game_state : GameStates = GameStates.NONE:
 	set(value):
 		game_state = value

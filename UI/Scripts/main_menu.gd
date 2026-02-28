@@ -11,3 +11,7 @@ func _on_tests_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+
+
+func _on_options_pressed() -> void:
+	print("Ain't no way!!!")

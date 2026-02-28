@@ -60,6 +60,6 @@ func _delete_module(type : String):
 			shop_item = child
 			break
 	if not shop_item: return
-	ScoreManager.money += shop_item.get_last_price()
+	ScoreManager.money += shop_item.get_last_price() * GameManager.difficulty_sell_percentage
 	print(shop_item.get_last_price())
 	shop_item.decrement_pricing()
