@@ -8,7 +8,7 @@ func _ready() -> void:
 	GameManager.delete_mode_exited.connect(_on_delete_mode_exit)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action("cancel"):
+	if event.is_action_pressed("cancel"):
 		_on_trash_button_pressed()
 
 func _on_trash_button_pressed() -> void:

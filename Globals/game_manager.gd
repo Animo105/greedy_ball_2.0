@@ -77,7 +77,7 @@ func end_round() -> void:
 			ball.queue_free()
 		balls = []
 		game_state = GameStates.NONE
-		ScoreManager.reset_combo()
+		ScoreManager.finish_round()
 		round_ended.emit()
 
 
