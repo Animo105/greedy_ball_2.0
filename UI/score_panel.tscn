@@ -10,8 +10,9 @@ content_margin_bottom = 10.0
 bg_color = Color(0, 0, 0, 0.39215687)
 
 [node name="ScorePanel" type="PanelContainer" unique_id=1940807635]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(150, 0)
+offset_right = 200.0
+offset_bottom = 105.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qy31m")
 script = ExtResource("1_qy31m")
 

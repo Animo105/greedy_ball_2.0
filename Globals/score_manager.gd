@@ -30,7 +30,7 @@ func reset():
 	reset_combo()
 
 func finish_round():
-	money += int(round_score/100.0)
+	money += round_score/100.0
 	score_value += round_score
 	round_score = 0
 	reset_combo()
