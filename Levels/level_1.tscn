@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://btvm14jbv5qie" path="res://Paddles/paddle_left.tscn" id="2_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dy450iff1eckr" path="res://Paddles/paddle_right.tscn" id="3_syshm"]
 [ext_resource type="PackedScene" uid="uid://dfpvpsck4eg7o" path="res://UI/game_hud.tscn" id="6_rfktq"]
-[ext_resource type="Script" uid="uid://bh2a6ip3qc00t" path="res://Modules/Script/area_placable_location.gd" id="7_0urlm"]
+[ext_resource type="Script" uid="uid://bh2a6ip3qc00t" path="res://Modules/Script/area_placable.gd" id="7_0urlm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_syshm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77x7w"]
-size = Vector2(736, 344)
+size = Vector2(736, 373)
 
 [node name="Level 1" type="Node2D" unique_id=310962128]
 script = ExtResource("1_rf6l5")
@@ -89,7 +89,7 @@ script = ExtResource("7_0urlm")
 metadata/_custom_type_script = "uid://bh2a6ip3qc00t"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPlacable" unique_id=554126089]
-position = Vector2(496, 221)
+position = Vector2(496, 235.5)
 shape = SubResource("RectangleShape2D_77x7w")
 
 [node name="GameHUD" parent="." unique_id=718596449 instance=ExtResource("6_rfktq")]

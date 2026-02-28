@@ -4,6 +4,8 @@ signal game_state_changed(value : GameStates)
 signal round_ended
 signal round_started
 signal module_placed
+signal delete_mode_entered
+signal delete_mode_exited
 
 enum GameStates {
 	NONE,
@@ -31,13 +33,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
 		if event.button_index == 1:
 			if game_state == GameStates.BUILDING:
-				if module_in_building.area_placement.is_placable():
-					module_in_building.area_placement.hide_preview()
-					module_in_building = null
-					game_state = GameStates.NONE
-					module_placed.emit()
+				place_module()
 			elif game_state == GameStates.REMOVING:
-				pass
+				delete_module()
 
 # PLAYING VARIABLES AND FUNCTIONS
 var starting_ball_positon : Vector2 = Vector2.ZERO
@@ -79,6 +77,7 @@ func end_round() -> void:
 			ball.queue_free()
 		balls = []
 		game_state = GameStates.NONE
+		ScoreManager.reset_combo()
 		round_ended.emit()
 
 
@@ -87,7 +86,7 @@ var modules : Array[Module]
 var module_in_building : Module = null
 var can_build : bool = false
 
-func build_module(module : Module, price : float):
+func build_module(module : Module, _price : float):
 	if game_state != GameStates.NONE: return
 	if !module.area_placement: return
 	module_in_building = module
@@ -95,8 +94,54 @@ func build_module(module : Module, price : float):
 	module_in_building.area_placement.show_placing_preview()
 	game_state = GameStates.BUILDING
 
+func place_module():
+	if module_in_building && module_in_building.area_placement.is_placable():
+		module_in_building.area_placement.hide_preview()
+		modules.append(module_in_building)
+		module_in_building.area_placement.module_mouse_entered.connect(_hover_module_in)
+		module_in_building.area_placement.module_mouse_exited.connect(_hover_module_out)
+		module_in_building = null
+		game_state = GameStates.NONE
+		module_placed.emit()
+
 func cancel_build():
 	if game_state != GameStates.BUILDING: return
 	module_in_building.queue_free()
 	module_in_building = null
 	game_state = GameStates.NONE
+
+
+# DELETION VARIABLES AND FUNCTIONS
+var hovered_module : Module = null
+
+func delete_module():
+	if not hovered_module: return
+	var idx = modules.find(hovered_module)
+	if idx == -1: return
+	modules.remove_at(idx)
+	hovered_module.queue_free()
+	hovered_module = null
+
+func enter_delete_mode():
+	if game_state == GameStates.NONE:
+		game_state = GameStates.REMOVING
+		for module in modules:
+			module.area_placement.show_preview()
+		delete_mode_entered.emit()
+
+func exit_delete_mode():
+	if game_state == GameStates.REMOVING:
+		game_state = GameStates.NONE
+		for module in modules:
+			module.area_placement.hide_preview()
+		delete_mode_exited.emit()
+
+func _hover_module_in(module : Module):
+	if game_state != GameStates.REMOVING: return
+	module.modulate = Color.ORANGE_RED
+	hovered_module = module
+
+func _hover_module_out(module : Module):
+	if game_state != GameStates.REMOVING: return
+	module.modulate = Color.WHITE
+	hovered_module = null

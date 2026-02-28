@@ -11,7 +11,6 @@ var tween : Tween = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	size = OPENED_SIZE
 	for module : ResourceModule in DataManager.loaded_resource_modules.values():
 		var shop_item : ShopItem = ShopItem.instantiate(module)
 		shop_panel.add_child(shop_item)

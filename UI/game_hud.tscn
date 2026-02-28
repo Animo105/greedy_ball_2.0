@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dfpvpsck4eg7o"]
 
 [ext_resource type="PackedScene" uid="uid://5hgdpxuci6bj" path="res://UI/Shop/shop.tscn" id="1_4e73c"]
+[ext_resource type="Script" uid="uid://cpsk38hxcbv4w" path="res://UI/Scripts/game_hud.gd" id="1_s04bl"]
 [ext_resource type="PackedScene" uid="uid://drkrkk6kw5iym" path="res://UI/score_panel.tscn" id="2_v2jwi"]
 
 [node name="GameHUD" type="CanvasLayer" unique_id=718596449]
+script = ExtResource("1_s04bl")
 
 [node name="Shop" parent="." unique_id=147628273 instance=ExtResource("1_4e73c")]
 custom_minimum_size = Vector2(0, 555)
@@ -21,3 +23,19 @@ grow_vertical = 2
 custom_minimum_size = Vector2(150, 110)
 offset_right = 149.0
 offset_bottom = 105.0
+
+[node name="TrashButton" type="Button" parent="." unique_id=1892505165]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -90.0
+offset_right = -260.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "TRASH!!!"
+
+[connection signal="pressed" from="TrashButton" to="." method="_on_trash_button_pressed"]
